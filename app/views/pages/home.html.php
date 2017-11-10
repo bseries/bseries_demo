@@ -19,7 +19,11 @@ $this->title($site->title());
 ?>
 <main class="home cp limit--normal">
 	<h1 class="h--alpha">Home</h1>
+	<p>
+		Welcome to the B–Series Demonstration Website!
+	</p>
 	<?php if ($post): ?>
+	<section class="promoted-post">
 		<article>
 			<h2>Promoted Post of the Day: <?= $post->title ?></h2>
 			<div>
@@ -29,23 +33,19 @@ $this->title($site->title());
 				'controller' => 'Posts', 'action' => 'view', 'id' => $post->id
 			]) ?>
 		</article>
+	</section>
 	<?php endif ?>
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-		tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-		vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-		gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-		dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-		invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-		eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-		sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-		tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-		dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-		invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-		eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-		sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
+	<?php if ($stream->count()): ?>
+	<section class="social-stream">
+		<h2>Our Tweets</h2>
+		<?php foreach ($stream as $item): ?>
+			<article>
+				<h3><?= $item->title ?></h3>
+				<div>
+					<?php echo $item->body ?>
+				</div>
+			</article>
+		<?php endforeach ?>
+	</section>
+	<?php endif ?>
 </main>

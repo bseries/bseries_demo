@@ -9,6 +9,7 @@
 
 namespace app\controllers;
 
+use cms_social\models\Stream;
 use cms_post\models\Posts;
 use indexed\Robots;
 
@@ -22,7 +23,12 @@ class PagesController extends \lithium\action\Controller {
 				'is_published' => true
 			]
 		]);
-		return compact('post');
+		$stream = Stream::find('all', [
+			'conditions' => [
+				'is_published' => true
+			]
+		]);
+		return compact('post', 'stream');
 	}
 
 	public function imprint() {}
