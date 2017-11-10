@@ -27,6 +27,9 @@ Router::attach('app', [
 Router::scope('app', function() {
 	Router::connect('/', 'Pages::home');
 
+	Router::connect('/posts', 'Posts::index');
+	Router::connect('/posts/{:id}', 'Posts::view');
+
 	Router::connect('/imprint', 'Pages::imprint');
 	Router::connect('/404', 'Errors::generic');
 	Router::connect('/robots.txt', [

@@ -10,9 +10,10 @@ $site = Sites::current($this->_request);
 // autoloaded from base_core\extensions\helper\Nav. For more
 // information, see the API documentation in the helper class.
 //
-// $this->nav->add('main', 'News', 'Posts::index');
+$this->nav->add('main', 'Posts', 'Posts::index');
 // ...
 // echo $this->nav->generate('main')
+
 
 ?>
 <header>
@@ -20,5 +21,6 @@ $site = Sites::current($this->_request);
 		<h1>
 			<?= $this->html->link($site->title(), '/') ?>
 		</h1>
+		<?= $this->nav->generate('main') ?>
 	</div>
 </header>
