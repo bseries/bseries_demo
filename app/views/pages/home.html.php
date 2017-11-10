@@ -19,6 +19,17 @@ $this->title($site->title());
 ?>
 <main class="home cp limit--normal">
 	<h1 class="h--alpha">Home</h1>
+	<?php if ($post): ?>
+		<article>
+			<h2>Promoted Post of the Day: <?= $post->title ?></h2>
+			<div>
+				<?= $this->editor->parse($post->teaser, ['mediaVersion' => 'fix00']) ?>
+			</div>
+			<?= $this->html->link('Read more…', [
+				'controller' => 'Posts', 'action' => 'view', 'id' => $post->id
+			]) ?>
+		</article>
+	<?php endif ?>
 	<p>
 		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
 		tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At

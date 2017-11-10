@@ -9,11 +9,21 @@
 
 namespace app\controllers;
 
+use cms_post\models\Posts;
 use indexed\Robots;
 
 class PagesController extends \lithium\action\Controller {
 
-	public function home() {}
+	public function home() {
+		// Display the first promoted post on the homepage.
+		$post = Posts::find('first', [
+			'conditions' => [
+				'is_promoted' => true,
+				'is_published' => true
+			]
+		]);
+		return compact('post');
+	}
 
 	public function imprint() {}
 
