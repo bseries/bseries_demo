@@ -411,12 +411,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bseries/base_media.git",
-                "reference": "1b954d659df6205ee98f8cf61f6321ab65828f5e"
+                "reference": "66c1326faaebada702f3c4f157903d959889f096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bseries/base_media/zipball/1b954d659df6205ee98f8cf61f6321ab65828f5e",
-                "reference": "1b954d659df6205ee98f8cf61f6321ab65828f5e",
+                "url": "https://api.github.com/repos/bseries/base_media/zipball/66c1326faaebada702f3c4f157903d959889f096",
+                "reference": "66c1326faaebada702f3c4f157903d959889f096",
                 "shasum": ""
             },
             "require": {
@@ -437,19 +437,8 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "authors": [
-                {
-                    "name": "The Community"
-                },
-                {
-                    "name": "David Persson"
-                },
-                {
-                    "name": "Atelier Disko"
-                }
-            ],
             "description": "Media functionality for Bento.",
-            "time": "2017-10-14T17:41:17+00:00"
+            "time": "2017-11-08T11:30:41+00:00"
         },
         {
             "name": "bseries/base_social",
